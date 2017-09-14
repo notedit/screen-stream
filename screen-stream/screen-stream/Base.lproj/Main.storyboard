@@ -41,26 +41,28 @@
                                     <action selector="stopCapture:" destination="9pv-A4-QxB" eventType="touchUpInside" id="Zmb-AQ-gmv"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="First View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KQZ-1w-vlD">
-                                <rect key="frame" x="109" y="215" width="157.5" height="41.5"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="                            " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JcO-WP-rRV">
+                                <rect key="frame" x="125" y="261" width="124" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="JcO-WP-rRV" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="93V-g5-vhx"/>
+                            <constraint firstItem="mJc-XO-JRw" firstAttribute="top" secondItem="JcO-WP-rRV" secondAttribute="bottom" constant="34.5" id="JI0-Oq-gm5"/>
                             <constraint firstItem="mJc-XO-JRw" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="Xf9-KO-R1m"/>
                             <constraint firstItem="Yb4-zm-R9d" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="bM5-N0-Igy"/>
                             <constraint firstItem="Yb4-zm-R9d" firstAttribute="top" secondItem="mJc-XO-JRw" secondAttribute="bottom" constant="30" id="jMy-wf-6ph"/>
-                            <constraint firstItem="KQZ-1w-vlD" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="jWm-0H-ciL"/>
-                            <constraint firstItem="mJc-XO-JRw" firstAttribute="top" secondItem="KQZ-1w-vlD" secondAttribute="bottom" constant="60" id="oEv-hC-nq3"/>
                             <constraint firstItem="mJc-XO-JRw" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" id="ymc-ux-Yux"/>
                             <constraint firstItem="Yb4-zm-R9d" firstAttribute="top" secondItem="mJc-XO-JRw" secondAttribute="bottom" constant="30" id="zPv-Lc-gjL"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="timeLable" destination="JcO-WP-rRV" id="RcZ-xo-C7G"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>

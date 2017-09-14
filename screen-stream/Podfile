@@ -7,3 +7,7 @@ target 'screen-stream' do
   # Pods for screen-stream
   pod 'libdotEngine',  :path => '/Users/xiang/Work/dotEngine-ios-sdk/libdotEngine.podspec'
 end
+
+target 'screen-stream-watch' do
+  pod 'libdotEngine',  :path => '/Users/xiang/Work/dotEngine-ios-sdk/libdotEngine.podspec'
+end

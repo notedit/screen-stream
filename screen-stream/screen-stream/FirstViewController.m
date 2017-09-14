@@ -19,6 +19,7 @@ static  NSString*  APP_SECRET = @"dc5cabddba054ffe894ba79c2910866c";
 static  NSString*  ROOM = @"dotcc";
 
 
+
 @interface FirstViewController ()<RPScreenRecorderDelegate,DotEngineDelegate,DotStreamDelegate>
 {
     RPScreenRecorder *screenRecorder;
@@ -28,6 +29,8 @@ static  NSString*  ROOM = @"dotcc";
     DotVideoCapturer* videoCapturer;
     BOOL isStarted;
 }
+
+@property (weak, nonatomic) IBOutlet UILabel *timeLable;
 
 @end
 
@@ -40,15 +43,35 @@ static  NSString*  ROOM = @"dotcc";
     screenRecorder.delegate = self;
     
     dotEngine = [DotEngine sharedInstanceWithDelegate:self];
-    localStream = [[DotStream alloc] initWithAudio:NO
+    localStream = [[DotStream alloc] initWithAudio:YES
                                              video:YES
                                       videoProfile:DotEngine_VideoProfile_480P
                                           delegate:self];
     
     videoCapturer = [[DotVideoCapturer alloc] init];
     localStream.videoCaptuer = videoCapturer;
+    
+    
+    NSTimer *t = [NSTimer scheduledTimerWithTimeInterval: 0.2
+                                                  target: self
+                                                selector:@selector(onTick)
+                                                userInfo: nil repeats:YES];
+    
+    [t fire];
 }
 
+
+
+-(void)onTick {
+    
+    NSDate *date = [NSDate date];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"hh:mm A"];
+    NSString *formattedDateString = [dateFormatter stringFromDate:date];
+    
+    self.timeLable.text = formattedDateString;
+    
+}
 
 
 
@@ -69,6 +92,8 @@ static  NSString*  ROOM = @"dotcc";
     
     NSString* userId = [NSString stringWithFormat:@"stream%d",randomNum];
     
+    [localStream setupLocalMedia];
+    
     [dotEngine generateTestTokenWithAppKey:APP_KEY
                                  appsecret:APP_SECRET
                                       room:ROOM
@@ -88,12 +113,6 @@ static  NSString*  ROOM = @"dotcc";
             CVImageBufferRef imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
             CVPixelBufferLockBaseAddress(imageBuffer, 0);
             
-            size_t width = CVPixelBufferGetWidth(imageBuffer);
-            size_t height = CVPixelBufferGetHeight(imageBuffer);
-            size_t bytesPerRow = CVPixelBufferGetBytesPerRow(imageBuffer);
-            size_t planeCount =  CVPixelBufferGetPlaneCount(imageBuffer);
-            
-            NSLog(@"get CMSampleBufferRef width: %zu  height: %zu   bytesPerRow :%zu  planeCount: %zu", width, height, bytesPerRow,planeCount);
             
             OSType pixelFormatType = CVPixelBufferGetPixelFormatType(imageBuffer);
             
@@ -206,7 +225,6 @@ static  NSString*  ROOM = @"dotcc";
 
 -(void)stream:(DotStream* _Nullable)stream  didGotAudioLevel:(int)audioLevel
 {
-    
     
 }
 

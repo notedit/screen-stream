@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2FE3036B05CAD6379A2C6DEC /* libPods-screen-stream-watch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CEB795B5FA76D2806AD2F8A /* libPods-screen-stream-watch.a */; };
 		4AE84DF0D558B121475CF8CF /* libPods-screen-stream.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 57261D99E0183E1DE081C177 /* libPods-screen-stream.a */; };
 		F03FDB191F698D1200CD2EC2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F03FDB181F698D1200CD2EC2 /* main.m */; };
 		F03FDB1C1F698D1200CD2EC2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F03FDB1B1F698D1200CD2EC2 /* AppDelegate.m */; };
@@ -15,11 +16,20 @@
 		F03FDB251F698D1200CD2EC2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F03FDB231F698D1200CD2EC2 /* Main.storyboard */; };
 		F03FDB271F698D1200CD2EC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F03FDB261F698D1200CD2EC2 /* Assets.xcassets */; };
 		F03FDB2A1F698D1200CD2EC2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F03FDB281F698D1200CD2EC2 /* LaunchScreen.storyboard */; };
+		F04526E61F6ADE34006471AE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F04526E51F6ADE34006471AE /* AppDelegate.m */; };
+		F04526E91F6ADE34006471AE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F04526E81F6ADE34006471AE /* ViewController.m */; };
+		F04526EC1F6ADE34006471AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F04526EA1F6ADE34006471AE /* Main.storyboard */; };
+		F04526EE1F6ADE34006471AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F04526ED1F6ADE34006471AE /* Assets.xcassets */; };
+		F04526F11F6ADE34006471AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F04526EF1F6ADE34006471AE /* LaunchScreen.storyboard */; };
+		F04526F41F6ADE34006471AE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F04526F31F6ADE34006471AE /* main.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		052CCA0EC19AA1C5496DDBF4 /* Pods-screen-stream-watch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-screen-stream-watch.release.xcconfig"; path = "Pods/Target Support Files/Pods-screen-stream-watch/Pods-screen-stream-watch.release.xcconfig"; sourceTree = "<group>"; };
+		3CEB795B5FA76D2806AD2F8A /* libPods-screen-stream-watch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-screen-stream-watch.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		57261D99E0183E1DE081C177 /* libPods-screen-stream.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-screen-stream.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		692D781D1024B18F9192613D /* Pods-screen-stream.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-screen-stream.release.xcconfig"; path = "Pods/Target Support Files/Pods-screen-stream/Pods-screen-stream.release.xcconfig"; sourceTree = "<group>"; };
+		9DF8F674CAD4AAA50E853908 /* Pods-screen-stream-watch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-screen-stream-watch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-screen-stream-watch/Pods-screen-stream-watch.debug.xcconfig"; sourceTree = "<group>"; };
 		AB9143887CC7A4B8D9501048 /* Pods-screen-stream.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-screen-stream.debug.xcconfig"; path = "Pods/Target Support Files/Pods-screen-stream/Pods-screen-stream.debug.xcconfig"; sourceTree = "<group>"; };
 		F03FDB141F698D1200CD2EC2 /* screen-stream.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "screen-stream.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F03FDB181F698D1200CD2EC2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -33,6 +43,16 @@
 		F03FDB261F698D1200CD2EC2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F03FDB291F698D1200CD2EC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F03FDB2B1F698D1200CD2EC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F04526E21F6ADE34006471AE /* screen-stream-watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "screen-stream-watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F04526E41F6ADE34006471AE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F04526E51F6ADE34006471AE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F04526E71F6ADE34006471AE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		F04526E81F6ADE34006471AE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F04526EB1F6ADE34006471AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F04526ED1F6ADE34006471AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F04526F01F6ADE34006471AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F04526F21F6ADE34006471AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F04526F31F6ADE34006471AE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +64,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F04526DF1F6ADE34006471AE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2FE3036B05CAD6379A2C6DEC /* libPods-screen-stream-watch.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -52,6 +80,8 @@
 			children = (
 				AB9143887CC7A4B8D9501048 /* Pods-screen-stream.debug.xcconfig */,
 				692D781D1024B18F9192613D /* Pods-screen-stream.release.xcconfig */,
+				9DF8F674CAD4AAA50E853908 /* Pods-screen-stream-watch.debug.xcconfig */,
+				052CCA0EC19AA1C5496DDBF4 /* Pods-screen-stream-watch.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -60,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				57261D99E0183E1DE081C177 /* libPods-screen-stream.a */,
+				3CEB795B5FA76D2806AD2F8A /* libPods-screen-stream-watch.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -68,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				F03FDB161F698D1200CD2EC2 /* screen-stream */,
+				F04526E31F6ADE34006471AE /* screen-stream-watch */,
 				F03FDB151F698D1200CD2EC2 /* Products */,
 				502959BA51EDB6C9E5E21D35 /* Pods */,
 				A666BB9D034B8B32C21D8872 /* Frameworks */,
@@ -78,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				F03FDB141F698D1200CD2EC2 /* screen-stream.app */,
+				F04526E21F6ADE34006471AE /* screen-stream-watch.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -108,6 +141,22 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		F04526E31F6ADE34006471AE /* screen-stream-watch */ = {
+			isa = PBXGroup;
+			children = (
+				F04526E41F6ADE34006471AE /* AppDelegate.h */,
+				F04526E51F6ADE34006471AE /* AppDelegate.m */,
+				F04526E71F6ADE34006471AE /* ViewController.h */,
+				F04526E81F6ADE34006471AE /* ViewController.m */,
+				F04526EA1F6ADE34006471AE /* Main.storyboard */,
+				F04526ED1F6ADE34006471AE /* Assets.xcassets */,
+				F04526EF1F6ADE34006471AE /* LaunchScreen.storyboard */,
+				F04526F21F6ADE34006471AE /* Info.plist */,
+				F04526F31F6ADE34006471AE /* main.m */,
+			);
+			path = "screen-stream-watch";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -131,6 +180,26 @@
 			productReference = F03FDB141F698D1200CD2EC2 /* screen-stream.app */;
 			productType = "com.apple.product-type.application";
 		};
+		F04526E11F6ADE34006471AE /* screen-stream-watch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F04526F71F6ADE34006471AE /* Build configuration list for PBXNativeTarget "screen-stream-watch" */;
+			buildPhases = (
+				83768F9D6E74E5A4F703EFF1 /* [CP] Check Pods Manifest.lock */,
+				F04526DE1F6ADE34006471AE /* Sources */,
+				F04526DF1F6ADE34006471AE /* Frameworks */,
+				F04526E01F6ADE34006471AE /* Resources */,
+				9FC5BE1FC4C10C82CE644ED6 /* [CP] Embed Pods Frameworks */,
+				A6ADA7F4030FAB24266160A8 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "screen-stream-watch";
+			productName = "screen-stream-watch";
+			productReference = F04526E21F6ADE34006471AE /* screen-stream-watch.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -142,6 +211,11 @@
 				TargetAttributes = {
 					F03FDB131F698D1200CD2EC2 = {
 						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = CLKRLU8RPY;
+						ProvisioningStyle = Automatic;
+					};
+					F04526E11F6ADE34006471AE = {
+						CreatedOnToolsVersion = 9.0;
 						DevelopmentTeam = CLKRLU8RPY;
 						ProvisioningStyle = Automatic;
 					};
@@ -161,6 +235,7 @@
 			projectRoot = "";
 			targets = (
 				F03FDB131F698D1200CD2EC2 /* screen-stream */,
+				F04526E11F6ADE34006471AE /* screen-stream-watch */,
 			);
 		};
 /* End PBXProject section */
@@ -173,6 +248,16 @@
 				F03FDB2A1F698D1200CD2EC2 /* LaunchScreen.storyboard in Resources */,
 				F03FDB271F698D1200CD2EC2 /* Assets.xcassets in Resources */,
 				F03FDB251F698D1200CD2EC2 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F04526E01F6ADE34006471AE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F04526F11F6ADE34006471AE /* LaunchScreen.storyboard in Resources */,
+				F04526EE1F6ADE34006471AE /* Assets.xcassets in Resources */,
+				F04526EC1F6ADE34006471AE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,6 +277,51 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		83768F9D6E74E5A4F703EFF1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9FC5BE1FC4C10C82CE644ED6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-screen-stream-watch/Pods-screen-stream-watch-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A6ADA7F4030FAB24266160A8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-screen-stream-watch/Pods-screen-stream-watch-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B076790687A949A303D60278 /* [CP] Copy Pods Resources */ = {
@@ -238,6 +368,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F04526DE1F6ADE34006471AE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F04526E91F6ADE34006471AE /* ViewController.m in Sources */,
+				F04526F41F6ADE34006471AE /* main.m in Sources */,
+				F04526E61F6ADE34006471AE /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
@@ -253,6 +393,22 @@
 			isa = PBXVariantGroup;
 			children = (
 				F03FDB291F698D1200CD2EC2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		F04526EA1F6ADE34006471AE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F04526EB1F6ADE34006471AE /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F04526EF1F6ADE34006471AE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F04526F01F6ADE34006471AE /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -380,6 +536,60 @@
 			};
 			name = Release;
 		};
+		F04526F51F6ADE34006471AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9DF8F674CAD4AAA50E853908 /* Pods-screen-stream-watch.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CLKRLU8RPY;
+				ENABLE_BITCODE = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "screen-stream-watch/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "cc.dot.screen-stream-watch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F04526F61F6ADE34006471AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 052CCA0EC19AA1C5496DDBF4 /* Pods-screen-stream-watch.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CLKRLU8RPY;
+				ENABLE_BITCODE = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "screen-stream-watch/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "cc.dot.screen-stream-watch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -397,6 +607,15 @@
 			buildConfigurations = (
 				F03FDB2F1F698D1200CD2EC2 /* Debug */,
 				F03FDB301F698D1200CD2EC2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F04526F71F6ADE34006471AE /* Build configuration list for PBXNativeTarget "screen-stream-watch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F04526F51F6ADE34006471AE /* Debug */,
+				F04526F61F6ADE34006471AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
