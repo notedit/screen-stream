@@ -65,3 +65,4 @@ iOSInjectionProject/
 
 *.lock
 *xcworkspace/
+.DS_Store
