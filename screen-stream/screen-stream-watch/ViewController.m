@@ -14,10 +14,10 @@
 
 static  NSString*  APP_KEY = @"45";
 static  NSString*  APP_SECRET = @"dc5cabddba054ffe894ba79c2910866c";
-static  NSString*  ROOM = @"dotcc";
+static  NSString*  ROOM = @"screen_stream";
 
 
-@interface ViewController ()<DotEngineDelegate>
+@interface ViewController ()<DotEngineDelegate,DotStreamDelegate>
 {
     
     DotEngine* dotEngine;
@@ -65,10 +65,10 @@ static  NSString*  ROOM = @"dotcc";
                                  appsecret:APP_SECRET
                                       room:ROOM
                                     userId:userId withBlock:^(NSString *token, NSError *error) {
-                                        if (error != nil) {
+                                        if (error == nil) {
                                             [dotEngine joinRoomWithToken:token];
                                         }
-                                    }]
+                                    }];
 }
 
 
@@ -116,7 +116,9 @@ static  NSString*  ROOM = @"dotcc";
 
 -(void)dotEngine:(DotEngine* _Nonnull) engine didRemoveRemoteStream:(DotStream* _Nonnull) stream
 {
-    
+    if (remoteStream != nil && [remoteStream.streamId isEqualToString:stream.streamId]) {
+        [remoteStream.view removeFromSuperview];
+    }
 }
 
 -(void)dotEngine:(DotEngine* _Nonnull) engine didOccurError:(DotEngineErrorCode)errorCode
@@ -124,6 +126,27 @@ static  NSString*  ROOM = @"dotcc";
     
     NSLog(@"didOccurError  %ld", (long)errorCode);
 }
+
+
+
+#pragma DotStream delegate
+
+
+-(void)stream:(DotStream* _Nullable)stream  didMutedVideo:(BOOL)muted
+{
+    
+}
+
+-(void)stream:(DotStream* _Nullable)stream  didMutedAudio:(BOOL)muted
+{
+    
+}
+
+-(void)stream:(DotStream* _Nullable)stream  didGotAudioLevel:(int)audioLevel
+{
+    
+}
+
 
 
 @end
