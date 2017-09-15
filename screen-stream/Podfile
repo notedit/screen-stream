@@ -12,3 +12,8 @@ end
 target 'screen-stream-watch' do
   pod 'libdotEngine', :git => 'https://github.com/dotEngine/dotEngine-ios-sdk.git'
 end
+
+target 'screen-stream-watch-swift' do
+  use_frameworks!
+  pod 'libdotEngine', :git => 'https://github.com/dotEngine/dotEngine-ios-sdk.git'
+end

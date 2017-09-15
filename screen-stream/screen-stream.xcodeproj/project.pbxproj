@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		22540843E6879CC17C3B27B5 /* Pods_screen_stream_watch_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57B6F6F8A75741ADE6EAC417 /* Pods_screen_stream_watch_swift.framework */; };
 		2FE3036B05CAD6379A2C6DEC /* libPods-screen-stream-watch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CEB795B5FA76D2806AD2F8A /* libPods-screen-stream-watch.a */; };
 		4AE84DF0D558B121475CF8CF /* libPods-screen-stream.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 57261D99E0183E1DE081C177 /* libPods-screen-stream.a */; };
 		F03FDB191F698D1200CD2EC2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F03FDB181F698D1200CD2EC2 /* main.m */; };
@@ -22,13 +23,21 @@
 		F04526EE1F6ADE34006471AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F04526ED1F6ADE34006471AE /* Assets.xcassets */; };
 		F04526F11F6ADE34006471AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F04526EF1F6ADE34006471AE /* LaunchScreen.storyboard */; };
 		F04526F41F6ADE34006471AE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F04526F31F6ADE34006471AE /* main.m */; };
+		F0D9E5831F6BC7C5004F50D3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D9E5821F6BC7C5004F50D3 /* AppDelegate.swift */; };
+		F0D9E5851F6BC7C5004F50D3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D9E5841F6BC7C5004F50D3 /* ViewController.swift */; };
+		F0D9E5881F6BC7C5004F50D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0D9E5861F6BC7C5004F50D3 /* Main.storyboard */; };
+		F0D9E58A1F6BC7C5004F50D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0D9E5891F6BC7C5004F50D3 /* Assets.xcassets */; };
+		F0D9E58D1F6BC7C5004F50D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0D9E58B1F6BC7C5004F50D3 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		052CCA0EC19AA1C5496DDBF4 /* Pods-screen-stream-watch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-screen-stream-watch.release.xcconfig"; path = "Pods/Target Support Files/Pods-screen-stream-watch/Pods-screen-stream-watch.release.xcconfig"; sourceTree = "<group>"; };
+		2B74CAFA47EE58993C2C3550 /* Pods-screen-stream-watch-swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-screen-stream-watch-swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-screen-stream-watch-swift/Pods-screen-stream-watch-swift.debug.xcconfig"; sourceTree = "<group>"; };
 		3CEB795B5FA76D2806AD2F8A /* libPods-screen-stream-watch.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-screen-stream-watch.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		57261D99E0183E1DE081C177 /* libPods-screen-stream.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-screen-stream.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		57B6F6F8A75741ADE6EAC417 /* Pods_screen_stream_watch_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_screen_stream_watch_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		692D781D1024B18F9192613D /* Pods-screen-stream.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-screen-stream.release.xcconfig"; path = "Pods/Target Support Files/Pods-screen-stream/Pods-screen-stream.release.xcconfig"; sourceTree = "<group>"; };
+		8410ABF4FB4AB67B64009A5F /* Pods-screen-stream-watch-swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-screen-stream-watch-swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-screen-stream-watch-swift/Pods-screen-stream-watch-swift.release.xcconfig"; sourceTree = "<group>"; };
 		9DF8F674CAD4AAA50E853908 /* Pods-screen-stream-watch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-screen-stream-watch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-screen-stream-watch/Pods-screen-stream-watch.debug.xcconfig"; sourceTree = "<group>"; };
 		AB9143887CC7A4B8D9501048 /* Pods-screen-stream.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-screen-stream.debug.xcconfig"; path = "Pods/Target Support Files/Pods-screen-stream/Pods-screen-stream.debug.xcconfig"; sourceTree = "<group>"; };
 		F03FDB141F698D1200CD2EC2 /* screen-stream.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "screen-stream.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,6 +62,13 @@
 		F04526F01F6ADE34006471AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F04526F21F6ADE34006471AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F04526F31F6ADE34006471AE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F0D9E5801F6BC7C5004F50D3 /* screen-stream-watch-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "screen-stream-watch-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0D9E5821F6BC7C5004F50D3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F0D9E5841F6BC7C5004F50D3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F0D9E5871F6BC7C5004F50D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F0D9E5891F6BC7C5004F50D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F0D9E58C1F6BC7C5004F50D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F0D9E58E1F6BC7C5004F50D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +88,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F0D9E57D1F6BC7C5004F50D3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22540843E6879CC17C3B27B5 /* Pods_screen_stream_watch_swift.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -82,6 +106,8 @@
 				692D781D1024B18F9192613D /* Pods-screen-stream.release.xcconfig */,
 				9DF8F674CAD4AAA50E853908 /* Pods-screen-stream-watch.debug.xcconfig */,
 				052CCA0EC19AA1C5496DDBF4 /* Pods-screen-stream-watch.release.xcconfig */,
+				2B74CAFA47EE58993C2C3550 /* Pods-screen-stream-watch-swift.debug.xcconfig */,
+				8410ABF4FB4AB67B64009A5F /* Pods-screen-stream-watch-swift.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -91,6 +117,7 @@
 			children = (
 				57261D99E0183E1DE081C177 /* libPods-screen-stream.a */,
 				3CEB795B5FA76D2806AD2F8A /* libPods-screen-stream-watch.a */,
+				57B6F6F8A75741ADE6EAC417 /* Pods_screen_stream_watch_swift.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -100,6 +127,7 @@
 			children = (
 				F03FDB161F698D1200CD2EC2 /* screen-stream */,
 				F04526E31F6ADE34006471AE /* screen-stream-watch */,
+				F0D9E5811F6BC7C5004F50D3 /* screen-stream-watch-swift */,
 				F03FDB151F698D1200CD2EC2 /* Products */,
 				502959BA51EDB6C9E5E21D35 /* Pods */,
 				A666BB9D034B8B32C21D8872 /* Frameworks */,
@@ -111,6 +139,7 @@
 			children = (
 				F03FDB141F698D1200CD2EC2 /* screen-stream.app */,
 				F04526E21F6ADE34006471AE /* screen-stream-watch.app */,
+				F0D9E5801F6BC7C5004F50D3 /* screen-stream-watch-swift.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -157,6 +186,19 @@
 			path = "screen-stream-watch";
 			sourceTree = "<group>";
 		};
+		F0D9E5811F6BC7C5004F50D3 /* screen-stream-watch-swift */ = {
+			isa = PBXGroup;
+			children = (
+				F0D9E5821F6BC7C5004F50D3 /* AppDelegate.swift */,
+				F0D9E5841F6BC7C5004F50D3 /* ViewController.swift */,
+				F0D9E5861F6BC7C5004F50D3 /* Main.storyboard */,
+				F0D9E5891F6BC7C5004F50D3 /* Assets.xcassets */,
+				F0D9E58B1F6BC7C5004F50D3 /* LaunchScreen.storyboard */,
+				F0D9E58E1F6BC7C5004F50D3 /* Info.plist */,
+			);
+			path = "screen-stream-watch-swift";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -200,12 +242,33 @@
 			productReference = F04526E21F6ADE34006471AE /* screen-stream-watch.app */;
 			productType = "com.apple.product-type.application";
 		};
+		F0D9E57F1F6BC7C5004F50D3 /* screen-stream-watch-swift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F0D9E58F1F6BC7C5004F50D3 /* Build configuration list for PBXNativeTarget "screen-stream-watch-swift" */;
+			buildPhases = (
+				06FC361EC78EF99D6098723F /* [CP] Check Pods Manifest.lock */,
+				F0D9E57C1F6BC7C5004F50D3 /* Sources */,
+				F0D9E57D1F6BC7C5004F50D3 /* Frameworks */,
+				F0D9E57E1F6BC7C5004F50D3 /* Resources */,
+				E6D18354F615FA535E9A4AD3 /* [CP] Embed Pods Frameworks */,
+				AD256F48715F4CFBA3A40617 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "screen-stream-watch-swift";
+			productName = "screen-stream-watch-swift";
+			productReference = F0D9E5801F6BC7C5004F50D3 /* screen-stream-watch-swift.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		F03FDB0C1F698D1100CD2EC2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0900;
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = dotEngine;
 				TargetAttributes = {
@@ -215,6 +278,11 @@
 						ProvisioningStyle = Automatic;
 					};
 					F04526E11F6ADE34006471AE = {
+						CreatedOnToolsVersion = 9.0;
+						DevelopmentTeam = 984L9QX9X5;
+						ProvisioningStyle = Automatic;
+					};
+					F0D9E57F1F6BC7C5004F50D3 = {
 						CreatedOnToolsVersion = 9.0;
 						DevelopmentTeam = 984L9QX9X5;
 						ProvisioningStyle = Automatic;
@@ -236,6 +304,7 @@
 			targets = (
 				F03FDB131F698D1200CD2EC2 /* screen-stream */,
 				F04526E11F6ADE34006471AE /* screen-stream-watch */,
+				F0D9E57F1F6BC7C5004F50D3 /* screen-stream-watch-swift */,
 			);
 		};
 /* End PBXProject section */
@@ -261,9 +330,34 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F0D9E57E1F6BC7C5004F50D3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0D9E58D1F6BC7C5004F50D3 /* LaunchScreen.storyboard in Resources */,
+				F0D9E58A1F6BC7C5004F50D3 /* Assets.xcassets in Resources */,
+				F0D9E5881F6BC7C5004F50D3 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		06FC361EC78EF99D6098723F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		389589CEA9449E3F83C625F4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -324,6 +418,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-screen-stream-watch/Pods-screen-stream-watch-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		AD256F48715F4CFBA3A40617 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-screen-stream-watch-swift/Pods-screen-stream-watch-swift-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B076790687A949A303D60278 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -354,6 +463,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-screen-stream/Pods-screen-stream-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		E6D18354F615FA535E9A4AD3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-screen-stream-watch-swift/Pods-screen-stream-watch-swift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -375,6 +499,15 @@
 				F04526E91F6ADE34006471AE /* ViewController.m in Sources */,
 				F04526F41F6ADE34006471AE /* main.m in Sources */,
 				F04526E61F6ADE34006471AE /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0D9E57C1F6BC7C5004F50D3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0D9E5851F6BC7C5004F50D3 /* ViewController.swift in Sources */,
+				F0D9E5831F6BC7C5004F50D3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +542,22 @@
 			isa = PBXVariantGroup;
 			children = (
 				F04526F01F6ADE34006471AE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		F0D9E5861F6BC7C5004F50D3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F0D9E5871F6BC7C5004F50D3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F0D9E58B1F6BC7C5004F50D3 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F0D9E58C1F6BC7C5004F50D3 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -602,6 +751,53 @@
 			};
 			name = Release;
 		};
+		F0D9E5901F6BC7C5004F50D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2B74CAFA47EE58993C2C3550 /* Pods-screen-stream-watch-swift.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 984L9QX9X5;
+				ENABLE_BITCODE = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "screen-stream-watch-swift/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "co.gongzh.screen-stream-watch-swift";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F0D9E5911F6BC7C5004F50D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8410ABF4FB4AB67B64009A5F /* Pods-screen-stream-watch-swift.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 984L9QX9X5;
+				ENABLE_BITCODE = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "screen-stream-watch-swift/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "co.gongzh.screen-stream-watch-swift";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -628,6 +824,15 @@
 			buildConfigurations = (
 				F04526F51F6ADE34006471AE /* Debug */,
 				F04526F61F6ADE34006471AE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F0D9E58F1F6BC7C5004F50D3 /* Build configuration list for PBXNativeTarget "screen-stream-watch-swift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0D9E5901F6BC7C5004F50D3 /* Debug */,
+				F0D9E5911F6BC7C5004F50D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
