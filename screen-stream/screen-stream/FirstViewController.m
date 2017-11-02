@@ -14,9 +14,9 @@
 #import <DotStream.h>
 #import <DotVideoCapturer.h>
 
-static  NSString*  APP_KEY = @"45";
-static  NSString*  APP_SECRET = @"dc5cabddba054ffe894ba79c2910866c";
-static  NSString*  ROOM = @"screen_stream";
+static  NSString*  APP_KEY = @"";
+static  NSString*  APP_SECRET = @"";
+static  NSString*  ROOM = @"";
 
 
 
