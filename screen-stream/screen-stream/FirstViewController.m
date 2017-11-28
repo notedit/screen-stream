@@ -14,9 +14,11 @@
 #import <DotStream.h>
 #import <DotVideoCapturer.h>
 
+#import "CVPixelBufferResize.h"
+
 static  NSString*  APP_KEY = @"45";
 static  NSString*  APP_SECRET = @"dc5cabddba054ffe894ba79c2910866c";
-static  NSString*  ROOM = @"screen_stream";
+static  NSString*  ROOM = @"screen_test";
 
 
 
@@ -28,6 +30,9 @@ static  NSString*  ROOM = @"screen_stream";
     DotStream* localStream;
     DotVideoCapturer* videoCapturer;
     BOOL isStarted;
+    
+    NSDate* lastDate;
+    CVPixelBufferResize* resize;
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *timeLable;
@@ -51,6 +56,9 @@ static  NSString*  ROOM = @"screen_stream";
     videoCapturer = [[DotVideoCapturer alloc] init];
     localStream.videoCaptuer = videoCapturer;
     
+    resize = [[CVPixelBufferResize alloc] init];
+    
+    [UIApplication sharedApplication].idleTimerDisabled = YES;
     
     NSTimer *t = [NSTimer scheduledTimerWithTimeInterval: 0.2
                                                   target: self
@@ -70,9 +78,7 @@ static  NSString*  ROOM = @"screen_stream";
     NSString *formattedDateString = [dateFormatter stringFromDate:date];
     
     self.timeLable.text = formattedDateString;
-    
 }
-
 
 
 - (void)didReceiveMemoryWarning {
@@ -107,8 +113,15 @@ static  NSString*  ROOM = @"screen_stream";
     
     [screenRecorder startCaptureWithHandler:^(CMSampleBufferRef  _Nonnull sampleBuffer, RPSampleBufferType bufferType, NSError * _Nullable error) {
         
-        // TODO  应该缩放一下屏幕 
-        // 目前先只支持视频
+        if (lastDate == nil) {
+            lastDate = [NSDate date];
+        }
+        
+        double timePassed_ms = [lastDate timeIntervalSinceNow] * -1000.0;
+        lastDate = [NSDate date];
+        
+        NSLog(@"timepass %f", timePassed_ms);
+        
         if (bufferType == RPSampleBufferTypeVideo) {
             CVImageBufferRef imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
             CVPixelBufferLockBaseAddress(imageBuffer, 0);
@@ -121,10 +134,14 @@ static  NSString*  ROOM = @"screen_stream";
                 // only nv12 support
                 NSLog(@"kCVPixelFormatType_420YpCbCr8BiPlanarVideoRange ");
                 
+                CVImageBufferRef outbuffer = [resize processCVPixelBuffer:imageBuffer];
+                
                 if (videoCapturer != nil) {
-                    [videoCapturer sendCVPixelBuffer:imageBuffer
+                    [videoCapturer sendCVPixelBuffer:outbuffer
                                             rotation:VideoRoation_0];
                 }
+                
+                CVPixelBufferRelease(outbuffer);
             }
             CVPixelBufferUnlockBaseAddress(imageBuffer,0);
         }
@@ -154,7 +171,7 @@ static  NSString*  ROOM = @"screen_stream";
 
 - (void)screenRecorder:(RPScreenRecorder *)screenRecorder didStopRecordingWithError:(NSError *)error previewViewController:(nullable RPPreviewViewController *)previewViewController
 {
-    
+    NSLog(@"error %@", error);
 }
 
 
@@ -179,7 +196,7 @@ static  NSString*  ROOM = @"screen_stream";
 -(void)dotEngine:(DotEngine* _Nonnull) engine  stateChange:(DotStatus)state
 {
     if (state == DotStatusConnected) {
-        [dotEngine addStream:localStream];
+        //[dotEngine addStream:localStream];
     }
 }
 

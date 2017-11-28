@@ -22,6 +22,7 @@
 		F04526EE1F6ADE34006471AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F04526ED1F6ADE34006471AE /* Assets.xcassets */; };
 		F04526F11F6ADE34006471AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F04526EF1F6ADE34006471AE /* LaunchScreen.storyboard */; };
 		F04526F41F6ADE34006471AE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F04526F31F6ADE34006471AE /* main.m */; };
+		F07B8D0B1FCD7D0500BA9B94 /* CVPixelBufferResize.m in Sources */ = {isa = PBXBuildFile; fileRef = F07B8D0A1FCD7D0500BA9B94 /* CVPixelBufferResize.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,8 @@
 		F04526F01F6ADE34006471AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F04526F21F6ADE34006471AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F04526F31F6ADE34006471AE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F07B8D091FCD7D0500BA9B94 /* CVPixelBufferResize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CVPixelBufferResize.h; sourceTree = "<group>"; };
+		F07B8D0A1FCD7D0500BA9B94 /* CVPixelBufferResize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CVPixelBufferResize.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +121,8 @@
 		F03FDB161F698D1200CD2EC2 /* screen-stream */ = {
 			isa = PBXGroup;
 			children = (
+				F07B8D091FCD7D0500BA9B94 /* CVPixelBufferResize.h */,
+				F07B8D0A1FCD7D0500BA9B94 /* CVPixelBufferResize.m */,
 				F03FDB1A1F698D1200CD2EC2 /* AppDelegate.h */,
 				F03FDB1B1F698D1200CD2EC2 /* AppDelegate.m */,
 				F03FDB1D1F698D1200CD2EC2 /* FirstViewController.h */,
@@ -363,6 +368,7 @@
 			files = (
 				F03FDB221F698D1200CD2EC2 /* SecondViewController.m in Sources */,
 				F03FDB1C1F698D1200CD2EC2 /* AppDelegate.m in Sources */,
+				F07B8D0B1FCD7D0500BA9B94 /* CVPixelBufferResize.m in Sources */,
 				F03FDB1F1F698D1200CD2EC2 /* FirstViewController.m in Sources */,
 				F03FDB191F698D1200CD2EC2 /* main.m in Sources */,
 			);
