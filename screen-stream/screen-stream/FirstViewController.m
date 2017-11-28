@@ -8,7 +8,9 @@
 
 #import "FirstViewController.h"
 
-#import <ReplayKit/ReplayKit.h>
+
+#import <SceneKit/SceneKit.h>
+#import <ARKit/ARKit.h>
 
 #import <DotEngine.h>
 #import <DotStream.h>
@@ -22,9 +24,8 @@ static  NSString*  APP_SECRET = @"dc5cabddba054ffe894ba79c2910866c";
 static  NSString*  ROOM = @"screen_test";
 
 
-@interface FirstViewController ()<RPScreenRecorderDelegate,DotEngineDelegate,DotStreamDelegate>
+@interface FirstViewController ()<DotEngineDelegate,DotStreamDelegate,ARSCNViewDelegate, ARSessionDelegate>
 {
-    RPScreenRecorder *screenRecorder;
     
     DotEngine* dotEngine;
     DotStream* localStream;
@@ -33,9 +34,16 @@ static  NSString*  ROOM = @"screen_test";
     
     NSDate* lastDate;
     CVPixelBufferResize* resize;
+    
+    CADisplayLink *displayLink;
 }
 
-@property (weak, nonatomic) IBOutlet UILabel *timeLable;
+
+@property (weak, nonatomic) IBOutlet ARSCNView *sceneView;
+
+@property (nonatomic, strong) SCNRenderer *renderer;
+@property (nonatomic, strong) dispatch_queue_t videoQueue;
+@property (nonatomic, assign) CGSize outputSize;
 
 @end
 
@@ -44,8 +52,21 @@ static  NSString*  ROOM = @"screen_test";
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    screenRecorder = [RPScreenRecorder sharedRecorder];
-    screenRecorder.delegate = self;
+    
+    self.sceneView.delegate = self;
+    
+    self.sceneView.showsStatistics = YES;
+    
+    SCNScene *scene = [SCNScene sceneNamed:@"art.scnassets/ship.scn"];
+    
+    self.sceneView.scene = scene;
+    self.sceneView.session.delegate = self;
+    
+    self.renderer = [SCNRenderer rendererWithDevice:nil options:nil];
+    self.renderer.scene = scene;
+    
+    self.videoQueue = dispatch_queue_create("cc.dot.video.queue", NULL);
+    
     
     dotEngine = [DotEngine sharedInstanceWithDelegate:self];
     localStream = [[DotStream alloc] initWithAudio:YES
@@ -60,24 +81,26 @@ static  NSString*  ROOM = @"screen_test";
     
     [UIApplication sharedApplication].idleTimerDisabled = YES;
     
-    NSTimer *t = [NSTimer scheduledTimerWithTimeInterval: 0.2
-                                                  target: self
-                                                selector:@selector(onTick)
-                                                userInfo: nil repeats:YES];
+    self.outputSize = self.sceneView.frame.size;
     
-    [t fire];
 }
 
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    ARWorldTrackingConfiguration *configuration = [ARWorldTrackingConfiguration new];
+    // Run the view's session
+    [self.sceneView.session runWithConfiguration:configuration];
+}
 
--(void)onTick {
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
     
-    NSDate *date = [NSDate date];
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"hh:mm A"];
-    NSString *formattedDateString = [dateFormatter stringFromDate:date];
-    
-    self.timeLable.text = formattedDateString;
+    // Pause the view's session
+    [self.sceneView.session pause];
 }
 
 
@@ -111,48 +134,11 @@ static  NSString*  ROOM = @"screen_test";
                                      }
                                     }];
     
-    [screenRecorder startCaptureWithHandler:^(CMSampleBufferRef  _Nonnull sampleBuffer, RPSampleBufferType bufferType, NSError * _Nullable error) {
-        
-        if (lastDate == nil) {
-            lastDate = [NSDate date];
-        }
-        
-        double timePassed_ms = [lastDate timeIntervalSinceNow] * -1000.0;
-        lastDate = [NSDate date];
-        
-        NSLog(@"timepass %f", timePassed_ms);
-        
-        if (bufferType == RPSampleBufferTypeVideo) {
-            CVImageBufferRef imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
-            CVPixelBufferLockBaseAddress(imageBuffer, 0);
-            
-            
-            OSType pixelFormatType = CVPixelBufferGetPixelFormatType(imageBuffer);
-            
-            if(pixelFormatType == kCVPixelFormatType_420YpCbCr8BiPlanarVideoRange ||
-               pixelFormatType == kCVPixelFormatType_420YpCbCr8BiPlanarFullRange){
-                // only nv12 support
-                NSLog(@"kCVPixelFormatType_420YpCbCr8BiPlanarVideoRange ");
-                
-                CVImageBufferRef outbuffer = [resize processCVPixelBuffer:imageBuffer];
-                
-                if (videoCapturer != nil) {
-                    [videoCapturer sendCVPixelBuffer:outbuffer
-                                            rotation:VideoRoation_0];
-                }
-                
-                CVPixelBufferRelease(outbuffer);
-            }
-            CVPixelBufferUnlockBaseAddress(imageBuffer,0);
-        }
-        
-        
-    } completionHandler:^(NSError * _Nullable error) {
-        
-        if (error != nil) {
-            isStarted = true;
-        }
-    }];
+    
+    displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(getCaptureData)];
+    displayLink.preferredFramesPerSecond =  15;  // 每秒15帧 可以自己调整
+    [displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
+    
 }
 
 - (IBAction)stopCapture:(id)sender {
@@ -161,23 +147,39 @@ static  NSString*  ROOM = @"screen_test";
     if (!isStarted) {
         return;
     }
-    [screenRecorder stopCaptureWithHandler:^(NSError * _Nullable error) {
-        isStarted = false;
-    }];
+    if (displayLink!= nil) {
+        [displayLink invalidate];
+        displayLink = nil;
+    }
+    isStarted = false;
 }
 
 
-#pragma RPScreenRecorderDelegate delegate
-
-- (void)screenRecorder:(RPScreenRecorder *)screenRecorder didStopRecordingWithError:(NSError *)error previewViewController:(nullable RPPreviewViewController *)previewViewController
-{
-    NSLog(@"error %@", error);
+-(CVPixelBufferRef)capturePixelBuffer {
+    
+    UIImage *image = [self.renderer snapshotAtTime:1 withSize:CGSizeMake(self.outputSize.width, self.outputSize.height) antialiasingMode:SCNAntialiasingModeMultisampling4X];
+    
+    CIImage* ciimage = [[CIImage alloc] initWithCGImage:image.CGImage];
+    
+    CVPixelBufferRef  pixelBuffer = [resize processCIImage:ciimage];
+    return pixelBuffer;
 }
 
 
-- (void)screenRecorderDidChangeAvailability:(RPScreenRecorder *)screenRecorder
+-(void)getCaptureData
 {
-    NSLog(@"screenRecorderDidChangeAvailability %d", screenRecorder.available);
+    NSLog(@"getCaptureData ");
+    
+    dispatch_async(self.videoQueue, ^{
+        CVPixelBufferRef pixelBuffer = [self capturePixelBuffer];
+        if (pixelBuffer) {
+            [videoCapturer sendCVPixelBuffer:pixelBuffer rotation:VideoRoation_0];
+             CFRelease(pixelBuffer);
+        } else {
+            NSLog(@"can not get pixel buffer ");
+        }
+        
+    });
 }
 
 #pragma DotEngine Delegate
@@ -241,6 +243,34 @@ static  NSString*  ROOM = @"screen_test";
 }
 
 -(void)stream:(DotStream* _Nullable)stream  didGotAudioLevel:(int)audioLevel
+{
+    
+}
+
+
+#pragma  ARSessionDelegate
+
+
+- (void)session:(ARSession *)session didUpdateFrame:(ARFrame *)frame
+{
+    NSLog(@"didUpdateFrame ");
+}
+
+- (void)session:(ARSession *)session didAddAnchors:(NSArray<ARAnchor*>*)anchors
+{
+    
+    
+}
+
+
+- (void)session:(ARSession *)session didUpdateAnchors:(NSArray<ARAnchor*>*)anchors
+{
+    
+    
+}
+
+
+- (void)session:(ARSession *)session didRemoveAnchors:(NSArray<ARAnchor*>*)anchors
 {
     
 }

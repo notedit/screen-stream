@@ -59,4 +59,34 @@
     }
 }
 
+
+-(CVPixelBufferRef)processCIImage:(CIImage*)image
+{
+    
+    @autoreleasepool  {
+        
+        [filter setValue:image forKey:kCIInputImageKey];
+        
+        CIImage *outimage = [filter outputImage];
+        
+        CVPixelBufferRef outPixelBuffer = NULL;
+        
+        CVReturn status = CVPixelBufferCreate(kCFAllocatorDefault,
+                                              (int)outimage.extent.size.width,
+                                              (int)outimage.extent.size.height,
+                                              kCVPixelFormatType_420YpCbCr8BiPlanarFullRange ,
+                                              (__bridge CFDictionaryRef) @{(__bridge NSString *) kCVPixelBufferIOSurfacePropertiesKey: @{}},
+                                              &outPixelBuffer);
+        
+        if (status != 0)
+        {
+            NSLog(@"CVPixelBufferCreate error %d", (int)status);
+        }
+        
+        [ciContext render:outimage toCVPixelBuffer:outPixelBuffer bounds:outimage.extent colorSpace:nil];
+        
+        return outPixelBuffer;
+    }
+}
+
 @end

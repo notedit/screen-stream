@@ -13,4 +13,7 @@
 @interface CVPixelBufferResize : NSObject
 
 -(CVPixelBufferRef)processCVPixelBuffer:(CVPixelBufferRef)pixelBuffer;
+
+-(CVPixelBufferRef)processCIImage:(CIImage*)image;
+
 @end
