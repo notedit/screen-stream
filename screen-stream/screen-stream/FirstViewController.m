@@ -81,7 +81,7 @@ static  NSString*  ROOM = @"screen_test";
     
     [UIApplication sharedApplication].idleTimerDisabled = YES;
     
-    self.outputSize = self.sceneView.frame.size;
+    self.outputSize = CGSizeMake(self.sceneView.frame.size.width*2, self.sceneView.frame.size.height*2);
     
 }
 
@@ -198,7 +198,7 @@ static  NSString*  ROOM = @"screen_test";
 -(void)dotEngine:(DotEngine* _Nonnull) engine  stateChange:(DotStatus)state
 {
     if (state == DotStatusConnected) {
-        //[dotEngine addStream:localStream];
+        [dotEngine addStream:localStream];
     }
 }
 
