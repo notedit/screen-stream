@@ -17,9 +17,9 @@
 
 #import "CVPixelBufferResize.h"
 
-static  NSString*  APP_KEY = @"45";
-static  NSString*  APP_SECRET = @"dc5cabddba054ffe894ba79c2910866c";
-static  NSString*  ROOM = @"screen_test";
+static  NSString*  APP_KEY = @"dotcc";
+static  NSString*  APP_SECRET = @"dotcc";
+static  NSString*  ROOM = @"dotcc";
 
 
 @interface FirstViewController ()<RPScreenRecorderDelegate,DotEngineDelegate,DotStreamDelegate>
@@ -196,7 +196,7 @@ static  NSString*  ROOM = @"screen_test";
 -(void)dotEngine:(DotEngine* _Nonnull) engine  stateChange:(DotStatus)state
 {
     if (state == DotStatusConnected) {
-        //[dotEngine addStream:localStream];
+        [dotEngine addStream:localStream];
     }
 }
 
